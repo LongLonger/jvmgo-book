@@ -1,6 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+/*
+step 1
+cd /Users/zhongshu/kowloon/program_project/mine/go/src/jvmgo-book/v1/code/go/src/jvmgo/ch01
+go install
+
+step 2
+cd /Users/zhongshu/kowloon/program_project/mine/go/bin
+ch01 -cp /a/b/c/dd.jar  com.test.Hehe gg
+
+ch01是go二进制可执行程序
+*/
 
 func main() {
 	cmd := parseCmd()
@@ -15,6 +29,10 @@ func main() {
 }
 
 func startJVM(cmd *Cmd) {
-	fmt.Printf("classpath:%s class:%s args:%v\n",
-		cmd.cpOption, cmd.class, cmd.args)
+	fmt.Printf("classpath:%s \n"+
+		"class:%s \n"+
+		"args:%v\n",
+		cmd.cpOption,
+		cmd.class,
+		cmd.args)
 }
